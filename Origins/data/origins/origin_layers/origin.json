@@ -1,0 +1,19 @@
+{
+  "replace": false,
+  "order": 0,
+  "enabled": true,
+  "origins": [
+    "origins:arachnid",
+    "origins:avian",
+    "origins:enderian",
+    "origins:merling",
+    "origins:phantom",
+    "origins:shulk"
+  ],
+  "allow_random": true,
+  "exclude_random": [
+    
+  ],
+  "allow_random_unchoosable": false,
+  "hidden": false
+}

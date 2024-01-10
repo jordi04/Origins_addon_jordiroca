@@ -1,0 +1,71 @@
+{
+	"type": "origins:multiple",
+	"hidden": true,
+	"time": {
+		"type": "origins:action_over_time",
+		"interval": 6000,
+		"entity_action": {
+			"type": "origins:chance",
+			"chance": 0.05,
+			"action": {
+				"type": "origins:and",
+				"actions": [
+				{
+					"type" :"origins:execute_command",
+					"command": "summon item ~ ~ ~ {PickupDelay:30, Item:{id:'minecraft:brown_dye', Count:1, tag: {display: {Name: '{\"text\":\"Poop\"}'}}}}"
+				},
+				{
+					"type": "origins:play_sound",
+					"sound": "entity.cod.flop",
+					"volume": 1.5
+				}
+				]
+			}
+		}
+	},
+	"hit": {
+		"type": "origins:action_when_hit",
+		"bientity_action": {
+			"type": "origins:target_action",
+			"entity_action": {
+				"type": "origins:chance",
+				"chance": 0.04,
+				"action": {
+					"type": "origins:and",
+					"actions": [
+					{
+						"type" :"origins:execute_command",
+						"command": "summon item ~ ~ ~ {PickupDelay:30, Item:{id:'minecraft:brown_dye', Count:1, tag: {display: {Name: '{\"text\":\"Poop\"}'}}}}"
+					},
+					{
+						"type": "origins:play_sound",
+						"sound": "entity.cod.flop",	
+						"volume": 1.5
+					}
+					]
+				}
+			}
+		}
+	},
+	"wake": {
+		"type": "origins:action_on_wake_up",
+		"entity_action": {
+			"type": "origins:chance",
+			"chance": 0.1,
+			"action": {
+				"type": "origins:and",
+				"actions": [
+				{
+					"type": "origins:execute_command",
+					"command": "summon item ~ ~ ~ {PickupDelay:30, Item:{id:'minecraft:brown_dye', Count:1, tag: {display: {Name: '{\"text\":\"Poop\"}'}}}}"
+				},
+				{
+					"type": "origins:play_sound",
+					"sound": "entity.cod.flop",
+					"volume": 1.5
+				}
+				]
+			}
+		}
+	}
+}

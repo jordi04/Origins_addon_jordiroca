@@ -1,0 +1,435 @@
+{
+	"type": "origins:multiple",
+	"name": "Arboreal",
+	"description": "You can climb trees, you take no fall damage when landing on leaves, and you can move through leaves",
+	"phase_toggle": {
+		"type" :"origins:toggle",
+		"active_by_default": false,
+		"key": {
+			"key": "key.origins.secondary_active"
+		}
+	},
+	"phase": {
+		"type": "origins:phasing",
+		"condition": {
+			"type": "origins:power_active",
+			"power": "origins:climb_tree_phase_toggle"
+		},
+		"block_condition": {
+			"type": "origins:in_tag",
+			"tag": "minecraft:leaves"
+		}
+	},
+	"phase_overlay": {
+		"type": "origins:overlay",
+		"texture": "minecraft:textures/misc/vignette.png",
+		"draw_mode": "nausea",
+		"strength": 1,
+		"red": 0.25,
+		"green": 1,
+		"blue": 0.33,
+		"draw_phase": "below_hud",
+		"condition": {
+			"type": "origins:power_active",
+			"power": "origins:climb_tree_phase_toggle"
+		}
+	},
+	"leaves_select": {
+		"type": "origins:prevent_block_selection",
+		"block_condition": {
+			"type": "origins:in_tag",
+			"tag": "origins:phase_monkey"
+		},
+		"condition": {
+			"type": "origins:power_active",
+			"power": "origins:climb_tree_phase_toggle"
+		}
+	},
+	"fall_leaves": {
+		"type": "origins:modify_damage_taken",
+		"damage_condition": {
+			"type": "origins:name",
+			"name": "fall"
+		},
+		"modifier": {
+			"operation": "multiply_total",
+			"value": -1
+		},
+		"condition": {
+			"type": "origins:in_block",
+			"block_condition": {
+				"type": "origins:or",
+				"conditions": [
+				{
+					"type": "origins:offset",
+					"y": -1,
+					"condition": {
+						"type": "origins:in_tag",
+						"tag": "origins:fall_monkey"
+					}
+				},
+				{
+					"type": "origins:offset",
+					"y": -1,
+					"x": 1,
+					"condition": {
+						"type": "origins:in_tag",
+						"tag": "origins:fall_monkey"
+					}
+				},
+				{
+					"type": "origins:offset",
+					"y": -1,
+					"x": -1,
+					"condition": {
+						"type": "origins:in_tag",
+						"tag": "origins:fall_monkey"
+					}
+				},
+				{
+					"type": "origins:offset",
+					"y": -1,
+					"z": 1,
+					"condition": {
+						"type": "origins:in_tag",
+						"tag": "origins:fall_monkey"
+					}
+				},
+				{
+					"type": "origins:offset",
+					"y": -1,
+					"z": -1,
+					"condition": {
+						"type": "origins:in_tag",
+						"tag": "origins:fall_monkey"
+					}
+				},
+				{
+					"type": "origins:offset",
+					"y": -1,
+					"x": 1,
+					"z": 1,
+					"condition": {
+						"type": "origins:in_tag",
+						"tag": "origins:fall_monkey"
+					}
+				},
+				{
+					"type": "origins:offset",
+					"y": -1,
+					"x": -1,
+					"z": 1,
+					"condition": {
+						"type": "origins:in_tag",
+						"tag": "origins:fall_monkey"
+					}
+				},
+				{
+					"type": "origins:offset",
+					"y": -1,
+					"x": 1,
+					"z": -1,
+					"condition": {
+						"type": "origins:in_tag",
+						"tag": "origins:fall_monkey"
+					}
+				},
+				{
+					"type": "origins:offset",
+					"y": -1,
+					"x": -1,
+					"z": -1,
+					"condition": {
+						"type": "origins:in_tag",
+						"tag": "origins:fall_monkey"
+					}
+				},
+				{
+					"type": "origins:block",
+					"block": "minecraft:moss_carpet"
+				},
+				{
+					"type": "origins:offset",
+					"x": 1,
+					"condition": {
+						"type": "origins:block",
+						"block": "minecraft:moss_carpet"
+					}
+				},
+				{
+					"type": "origins:offset",
+					"x": -1,
+					"condition": {
+						"type": "origins:block",
+						"block": "minecraft:moss_carpet"
+					}
+				},
+				{
+					"type": "origins:offset",
+					"z": 1,
+					"condition": {
+						"type": "origins:block",
+						"block": "minecraft:moss_carpet"
+					}
+				},
+				{
+					"type": "origins:offset",
+					"z": -1,
+					"condition": {
+						"type": "origins:block",
+						"block": "minecraft:moss_carpet"
+					}
+				},
+				{
+					"type": "origins:offset",
+					"x": 1,
+					"z": 1,
+					"condition": {
+						"type": "origins:block",
+						"block": "minecraft:moss_carpet"
+					}
+				},
+				{
+					"type": "origins:offset",
+					"x": -1,
+					"z": 1,
+					"condition": {
+						"type": "origins:block",
+						"block": "minecraft:moss_carpet"
+					}
+				},
+				{
+					"type": "origins:offset",
+					"x": 1,
+					"z": -1,
+					"condition": {
+						"type": "origins:block",
+						"block": "minecraft:moss_carpet"
+					}
+				},
+				{
+					"type": "origins:offset",
+					"x": -1,
+					"z": -1,
+					"condition": {
+						"type": "origins:block",
+						"block": "minecraft:moss_carpet"
+					}
+				}
+				]
+			}
+		}
+	},
+	"climb_break": {
+		"type": "origins:modify_break_speed",
+		"modifier": {
+			"operation": "multiply_base",
+			"value": 4
+		},
+		"condition": {
+			"type": "origins:or",
+			"conditions": [
+			{
+				"type": "origins:power_active",
+				"power": "origins:climb_tree_tree_climb"
+			},
+			{
+				"type": "origins:and",
+				"conditions": [
+				{
+					"type": "origins:sneaking"
+				},
+				{
+					"type": "origins:on_block",
+					"inverted": true,
+					"block_condition": {
+						"type": "origins:movement_blocking"
+					}
+				},
+				{
+					"type": "origins:fluid_height",
+					"fluid": "minecraft:water",
+					"comparison": "==",
+					"compare_to": 0
+				},
+				{
+					"type": "origins:fluid_height",
+					"fluid": "minecraft:lava",
+					"comparison": "==",
+					"compare_to": 0
+				},
+				{
+					"type": "origins:or",
+					"conditions": [
+					{
+						"type": "origins:and",
+						"conditions": [
+						{
+							"type": "origins:in_block_anywhere",
+							"inverted": true,
+							"block_condition": {
+								"type": "origins:in_tag",
+								"tag": "minecraft:leaves"
+							}
+						},
+						{
+							"type": "origins:block_in_radius",
+							"radius": 1,
+							"block_condition": {
+								"type": "origins:offset",
+								"y": 1,
+								"condition": {
+									"type": "origins:in_tag",
+									"tag": "origins:climbable_monkey"
+								}
+							}
+						}
+						]
+					},
+					{
+						"type": "origins:and",
+						"conditions": [
+						{
+							"type": "origins:in_block_anywhere",
+							"block_condition": {
+								"type": "origins:in_tag",
+								"tag": "minecraft:leaves"
+							}
+						},
+						{
+							"type": "origins:block_in_radius",
+							"radius": 0,
+							"inverted": true,
+							"block_condition": {
+								"type": "origins:offset",
+								"y": -1,
+								"condition": {
+									"type": "origins:in_tag",
+									"tag": "minecraft:leaves"
+								}
+							}
+						}
+						]
+					}
+					]
+				}
+				]
+			}
+			]
+		}
+	},
+	"tree_climb": {
+		"type": "origins:climbing",
+		"condition": {
+			"type": "origins:and",
+			"conditions": [
+			{
+				"type": "origins:collided_horizontally"
+			},
+			{
+				"type": "origins:fluid_height",
+				"fluid": "minecraft:water",
+				"comparison": "==",
+				"compare_to": 0
+			},
+			{
+				"type": "origins:fluid_height",
+				"fluid": "minecraft:lava",
+				"comparison": "==",
+				"compare_to": 0
+			},
+			{
+				"type": "origins:block_in_radius",
+				"radius": 1,
+				"block_condition": {
+					"type": "origins:offset",
+					"y": 1,
+					"condition": {
+						"type": "origins:in_tag",
+						"tag": "origins:climbable_monkey"
+					}
+				}
+			}
+			]
+		},
+		"hold_condition": {
+			"type" :"origins:and",
+			"conditions": [
+			{
+				"type" :"origins:on_block",
+				"inverted": true,
+				"block_condition": {
+					"type": "origins:movement_blocking"
+				}
+			},
+			{
+				"type": "origins:fluid_height",
+				"fluid": "minecraft:water",
+				"comparison": "==",
+				"compare_to": 0
+			},
+			{
+				"type": "origins:fluid_height",
+				"fluid": "minecraft:lava",
+				"comparison": "==",
+				"compare_to": 0
+			},
+			{
+				"type": "origins:or",
+				"conditions": [
+				{
+					"type": "origins:and",
+					"conditions": [
+					{
+						"type": "origins:in_block_anywhere",
+						"inverted": true,
+						"block_condition": {
+							"type": "origins:in_tag",
+							"tag": "minecraft:leaves"
+						}
+					},
+					{
+						"type": "origins:block_in_radius",
+						"radius": 1,
+						"block_condition": {
+							"type": "origins:offset",
+							"y": 1,
+							"condition": {
+								"type": "origins:in_tag",
+								"tag": "origins:climbable_monkey"
+							}
+						}
+					}
+					]
+				},
+				{
+					"type": "origins:and",
+					"conditions": [
+					{
+						"type": "origins:in_block_anywhere",
+						"block_condition": {
+							"type": "origins:in_tag",
+							"tag": "minecraft:leaves"
+						}
+					},
+					{
+						"type": "origins:block_in_radius",
+						"radius": 0,
+						"inverted": true,
+						"block_condition": {
+							"type": "origins:offset",
+							"y": -1,
+							"condition": {
+								"type": "origins:in_tag",
+								"tag": "minecraft:leaves"
+							}
+						}
+					}
+					]
+				}
+				]
+			}
+			]
+		}
+	}
+}

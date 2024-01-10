@@ -1,0 +1,26 @@
+{
+    "name": "Weak while dry",
+    "description": "When dry, you deal slightly less damage.",
+    "type": "origins:modify_damage_dealt",
+    "modifier": {
+      "name": "Origin modifier",
+      "operation": "addition",
+      "value": -2
+    },
+    "condition": {
+      "type": "origins:or",
+      "inverted":true,
+      "conditions": [
+        {
+          "type": "origins:fluid_height",
+          "fluid": "water",
+          "comparison": ">",
+          "compare_to": 0.0
+        },
+        {
+          "type": "origins:in_rain"
+        }
+      ]
+      
+    }
+  }

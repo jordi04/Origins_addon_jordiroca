@@ -1,0 +1,16 @@
+{
+	"powers": [
+		"origins:frost",
+		"origins:dragon_breath",
+		"origins:extra_reach",
+		"origins:ender_particles",
+		"origins:cacoon",
+		"origins:dragon_breath_crafting",
+		"origins:damage_from_potions"
+	],
+	"icon": {
+		"item": "minecraft:enchanted_book"
+	},
+	"order": 1,
+	"impact": 2
+}

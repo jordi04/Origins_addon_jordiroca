@@ -1,0 +1,26 @@
+{
+	"type": "origins:multiple",
+	"name": "Simian Stomach",
+	"description": "Your hunger drains 75% faster and you get 50% less food from meat",
+	"hunger": {
+		"type": "origins:modify_exhaustion",
+		"modifier": {
+			"value": 0.75,
+			"operation": "multiply_total"
+		}
+	},
+	"meat": {
+		"type": "origins:modify_food",
+		"item_condition": {
+			"type": "origins:meat"
+		},
+		"food_modifier": {
+			"operation": "multiply_base",
+			"value": -0.5
+		},
+		"saturation_modifier": {
+			"operation": "multiply_base",
+			"value": -0.5
+		}
+	}
+}

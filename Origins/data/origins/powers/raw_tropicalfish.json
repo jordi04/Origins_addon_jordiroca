@@ -1,0 +1,20 @@
+{
+	"name": "Tropical fish",
+  	"description": "You can eat tropical fish.",
+	"type": "origins:modify_food",
+	"item_condition": {
+		"type": "origins:ingredient",
+		"ingredient": {
+			"item": "minecraft:tropical_fish"
+		}
+	},
+	"food_modifier": {
+		"value": 4,
+		"operation": "addition"
+	},
+	"saturation_modifier": {
+		"value": 3,
+		"operation": "addition"
+	},
+	"hidden": false
+}

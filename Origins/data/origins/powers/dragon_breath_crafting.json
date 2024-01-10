@@ -1,0 +1,24 @@
+{
+"name": "Dragon breath crafting",
+"description": "You do not need to obtain dragon breath from the dragon, you can craft it with one fire charge and an empty glass bottle (no layout required).",
+"type": "origins:multiple",
+"fire_charge_crafting": {
+    "type": "origins:recipe",
+    "recipe": {
+      "id": "origins:dragon_breath_crafting",
+      "type": "minecraft:crafting_shapeless",
+      "ingredients": [
+        {
+          "item": "minecraft:fire_charge"
+        },
+        {
+          "item": "minecraft:glass_bottle"
+        }
+      ],
+      "result": {
+        "item": "minecraft:dragon_breath",
+        "count": 1
+      }
+    }
+  }
+}

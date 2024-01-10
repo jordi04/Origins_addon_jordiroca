@@ -1,0 +1,151 @@
+{
+	"type": "origins:multiple",
+	"name": "Jungle Appetite",
+	"description": "You get more food from melons, glistering melons, and cocoa beans",
+	"break": {
+		"type": "origins:modify_break_speed",
+		"modifier": {
+			"operation": "multiply_base",
+			"value": 1
+		},
+		"block_condition": {
+			"type": "origins:or",
+			"conditions": [
+			{
+				"type": "origins:block",
+				"block": "minecraft:melon"
+			},
+			{
+				"type": "origins:block",
+				"block": "minecraft:cocoa"
+			}
+			]
+		}
+	},
+	"spawn": {
+		"type": "origins:modify_player_spawn",
+		"dimension": "minecraft:overworld",
+		"biome": "minecraft:jungle",
+		"dimension_distance_multiplier": 1
+	},
+	"spawn_melon": {
+		"type": "origins:starting_equipment",
+		"recurrent": false,
+		"stack": {
+			"item": "minecraft:melon"
+		}
+	},
+	"melon_eat": {
+		"type": "origins:modify_food",
+		"item_condition": {
+			"type": "origins:ingredient",
+			"ingredient": {
+				"item": "minecraft:melon_slice"
+			}
+		},
+		"food_modifier": {
+			"operation": "multiply_base",
+			"value": 1
+		},
+		"saturation_modifier": {
+			"operation": "multiply_base",
+			"value": 1
+		}
+	},
+	"melon_break": {
+		"type": "origins:action_on_block_break",
+		"block_condition": {
+			"type": "origins:block",
+			"block": "minecraft:melon"
+		},
+		"block_action": {
+			"type": "origins:execute_command",
+			"command": "summon item ~ ~ ~ {PickupDelay:10, Item: {id: 'minecraft:melon_slice', Count: 3}}"
+		}
+	},
+	"melon_craft": {
+		"type": "origins:modify_crafting",
+		"recipe": "monkeyorigin:melon",
+		"result": {
+			"item": "minecraft:melon_slice",
+			"amount": 9
+		}
+	},
+	"glistering_melon_craft_remove": {
+		"type": "origins:modify_crafting",
+		"recipe": "minecraft:glistering_melon_slice",
+		"result": {
+			"item": "minecraft:melon_slice",
+			"amount": 0
+		}
+	},
+	"glistering_melon_craft_slice": {
+		"type": "origins:modify_crafting",
+		"recipe": "monkeyorigin:glistering_slice",
+		"result": {
+			"item": "minecraft:glistering_melon_slice",
+			"amount": 1
+		}
+	},
+	"glistering_melon_craft_whole": {
+		"type": "origins:modify_crafting",
+		"recipe": "monkeyorigin:glistering_whole",
+		"result": {
+			"item": "minecraft:glistering_melon_slice",
+			"amount": 9
+		}
+	},
+	"vine_craft": {
+		"type": "origins:modify_crafting",
+		"recipe": "monkeyorigin:vine",
+		"result": {
+			"item": "minecraft:vine",
+			"amount": 6
+		}	
+	},
+	"craft_add": {
+		"type": "origins:action_on_callback",
+		"entity_action_chosen": {
+			"type": "origins:and",
+			"actions": [
+			{
+				"type": "origins:execute_command",
+				"command": "recipe give @p monkeyorigin:melon"
+			},
+			{
+				"type": "origins:execute_command",
+				"command": "recipe give @p monkeyorigin:glistering_slice"
+			},
+			{
+				"type": "origins:execute_command",
+				"command": "recipe give @p monkeyorigin:glistering_whole"
+			},
+			{
+				"type": "origins:execute_command",
+				"command": "recipe give @p monkeyorigin:vine"
+			}
+			]
+		},
+		"entity_action_lost": {
+			"type": "origins:and",
+			"actions": [
+			{
+				"type": "origins:execute_command",
+				"command": "recipe take @p monkeyorigin:melon"
+			},
+			{
+				"type": "origins:execute_command",
+				"command": "recipe take @p monkeyorigin:glistering_slice"
+			},
+			{
+				"type": "origins:execute_command",
+				"command": "recipe take @p monkeyorigin:glistering_whole"
+			},
+			{
+				"type": "origins:execute_command",
+				"command": "recipe take @p monkeyorigin:vine"
+			}
+			]
+		}
+	}
+}

@@ -1,0 +1,17 @@
+{
+	"type": "minecraft:crafting_shaped",
+	"result": {
+		"item": "minecraft:vine",
+		"count": 6
+	},
+	"pattern": [
+		"# #",
+		"###",
+		"# #"
+	],
+	"key": {
+		"#": {
+			"tag": "minecraft:leaves"
+		}
+	}
+}

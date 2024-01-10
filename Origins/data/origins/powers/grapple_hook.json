@@ -1,0 +1,100 @@
+{
+	"type": "origins:multiple",
+	"name": "Grapple Hook",
+	"description": "You can grapple in the direction you're facing.",
+	"velocity": {
+		"type": "origins:active_self",
+		"cooldown": 70,
+		"hud_render": {
+			"sprite_location": "origins:textures/gui/community/spiderkolo/resource_bar_03.png",
+    		"bar_index": 16
+		},
+		"key": {
+			"key": "key.origins.primary_active"
+		},
+		"condition": {
+			"type": "origins:fluid_height",
+			"fluid": "minecraft:water",
+			"comparison": "==",
+			"compare_to": 0
+		},
+		
+		"entity_action": {
+			"type": "origins:and",
+			"actions": [
+			{
+				"type": "origins:delay",
+				"ticks": 3,
+				"action": {
+					"type": "origins:add_velocity",
+					"y": 0.25,
+					"set": true
+				}
+			},
+			{
+				"type": "origins:delay",
+				"ticks": 4,
+				"action": {
+					"type": "origins:add_velocity",
+					"z": 5,
+					"space": "local",
+					"set": true
+				}
+			},
+			{
+				"type": "origins:play_sound",
+				"sound": "minecraft:entity.fishing_bobber.throw",
+				"volume": 0.25,
+				"pitch": 0.5
+			}
+			]
+		}
+	},
+	"visual": {
+		"type": "origins:fire_projectile",
+		"cooldown": 70,
+		"divergence": 0,
+		"speed": 5,
+		"entity_type": "minecraft:fishing_bobber",
+		"tag": "{Fire:2000, HasVisualFire:0, NoGravity:1, Silent:1}",
+		"hud_render": {
+			"should_render": false
+		},
+		"key": {
+			"key": "key.origins.primary_active"
+		},
+		"condition": {
+			"type": "origins:and",
+			"conditions": [
+			{
+				"type": "origins:fluid_height",
+				"fluid": "minecraft:water",
+				"comparison": "==",
+				"compare_to": 0
+			},
+			{
+				"type": "origins:equipped_item",
+				"inverted": true,
+				"equipment_slot": "mainhand",
+				"item_condition": {
+					"type": "origins:ingredient",
+					"ingredient": {
+						"item": "minecraft:fishing_rod"
+					}
+				}
+			},
+			{
+				"type": "origins:equipped_item",
+				"inverted": true,
+				"equipment_slot": "offhand",
+				"item_condition": {
+					"type": "origins:ingredient",
+					"ingredient": {
+						"item": "minecraft:fishing_rod"
+					}
+				}
+			}
+			]
+		}
+	}
+}

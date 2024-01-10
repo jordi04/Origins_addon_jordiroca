@@ -1,0 +1,6 @@
+{
+  "name": "Conduit power everywhere",
+  "description": "You can get buffs from a conduit even on land.",
+  "type": "origins:simple",
+  "hidden": true
+}

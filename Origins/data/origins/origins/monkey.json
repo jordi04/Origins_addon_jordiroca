@@ -1,0 +1,19 @@
+{
+	"powers": [
+		"origins:grapple_hook",
+		"origins:climb_tree",
+		"origins:jungle",
+		"origins:jungle_active",
+		"origins:poop",
+		"origins:health_eight",
+		"origins:swim_slow",
+		"origins:less_breath",
+		"toomanyorigins:lucky_footing"
+
+	],
+	"icon": "minecraft:jungle_sapling",
+	"order": -8,
+	"impact": 2,
+	"name": "Monkey",
+	"description": "Primates that have adapted to life in the Jungle"
+}

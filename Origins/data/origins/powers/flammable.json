@@ -1,0 +1,13 @@
+{
+  "name": "Flammable",
+  "description": "Due to your wings, you take a lot more damage from fire.",
+  "type": "origins:modify_damage_taken",
+  "modifier": {
+	"name": "Origin modifier",
+	"operation": "multiply_base",
+	"value": 0.5
+  },
+  "damage_condition": {
+	"type": "origins:fire"
+  }
+}

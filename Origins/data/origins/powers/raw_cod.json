@@ -1,0 +1,20 @@
+{
+	"name": "Raw cod",
+  	"description": "You can eat raw cod.",
+	"type": "origins:modify_food",
+	"item_condition": {
+		"type": "origins:ingredient",
+		"ingredient": {
+			"item": "minecraft:cod"
+		}
+	},
+	"food_modifier": {
+		"value": 3,
+		"operation": "addition"
+	},
+	"saturation_modifier": {
+		"value": 2,
+		"operation": "addition"
+	},
+	"hidden": false
+}

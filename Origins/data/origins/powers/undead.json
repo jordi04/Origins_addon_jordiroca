@@ -1,0 +1,7 @@
+{
+  "name": "Undead",
+  "description": "You are part of the undead group, meaning that you are afected by the smite enchantment.",
+  "type": "origins:entity_group",
+  "group": "undead",
+  "hidden": true
+}

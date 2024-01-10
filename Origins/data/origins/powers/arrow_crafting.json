@@ -1,0 +1,37 @@
+{
+    "name": "Arrow crafting",
+    "description": "Due to your past generations, you learned more efficient ways to craft arrows. You can craft arrows using cobblestone instead of flint (using the same layout).",
+    "type": "origins:multiple",
+    "arrow_crafting": {
+        "type": "origins:recipe",
+        "recipe": {
+            "type": "minecraft:crafting_shaped",
+            "id": "origins:arrow_crafting_stone",
+            "pattern": [
+                "@",
+                "#",
+                "$"
+            ],
+            "key": {
+                "@": {
+                    "item": "minecraft:cobblestone"
+                },
+                
+                
+                "#": {
+                    "item": "minecraft:stick"
+                },
+                
+                
+                "$": {
+                    "item": "minecraft:feather"
+                }
+                
+            },
+            "result": {
+                "item": "minecraft:arrow",
+                "count": 4
+            }
+        }
+      }
+    }

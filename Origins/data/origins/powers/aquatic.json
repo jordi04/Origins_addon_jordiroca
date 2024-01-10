@@ -1,0 +1,7 @@
+{
+  "name": "Aquatic",
+  "description": "You are part of the aquatic group.",
+  "type": "origins:entity_group",
+  "group": "aquatic",
+  "hidden": true
+}

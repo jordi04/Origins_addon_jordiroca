@@ -1,0 +1,19 @@
+{
+	"powers": [
+		"origins:climbing",
+		"origins:master_of_webs",
+		"origins:carnivore",
+		"origins:fragile",
+		"origins:arthropod",
+		"origins:faster_spider",
+		"toomanyorigins:large_leap",
+		"toomanyorigins:lucky_footing",
+		"origins:cat_vision"
+	],
+	"icon": {
+		"item": "minecraft:cobweb"
+	},
+	"order": 2,
+	"impact": 1
+	
+}

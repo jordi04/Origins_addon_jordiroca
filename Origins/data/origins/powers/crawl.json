@@ -1,0 +1,63 @@
+{
+	"type": "origins:multiple",
+	"name": "Quadruped",
+	"description": "You can run quickly on all fours, reducing your size",
+	"crawl_toggle": {
+		"type": "origins:toggle",
+		"active_by_default": false,
+		"key": {
+			"key": "key.origins.secondary_active"
+		}
+	},
+	"crawl": {
+		"type": "origins:swimming",
+		"condition": {
+			"type":  "origins:and",
+			"conditions": [
+			{
+				"type": "origins:power_active",
+				"power": "origins:crawl_crawl_toggle"
+			},
+			{
+				"type": "origins:or",
+				"conditions": [
+				{
+					"type": "origins:on_block",
+					"block_condition": {
+						"type": "origins:movement_blocking"
+					}
+				},
+				{
+					"type": "origins:in_block",
+					"block_condition": {
+						"type": "origins:movement_blocking"
+					}
+				}
+				]
+			},
+			{
+				"type": "origins:fluid_height",
+				"fluid": "minecraft:water",
+				"comparison": "==",
+				"compare_to": 0
+			},
+			{
+				"type": "origins:fluid_height",
+				"fluid": "minecraft:lava",
+				"comparison": "==",
+				"compare_to": 0
+			},
+			{
+				"type": "origins:in_block_anywhere",
+				"inverted": true,
+				"block_condition": {
+					"type": "origins:in_tag",
+					"tag": "minecraft:leaves"
+				}
+			}
+			]
+	
+		}
+	}
+	
+}			

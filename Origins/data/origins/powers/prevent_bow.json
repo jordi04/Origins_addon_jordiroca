@@ -1,0 +1,32 @@
+{
+	"type": "origins:multiple",
+	"name": "Clumsy",
+	"description": "You are incapable of using bows or crossbows",
+	"prevent": {
+		"type": "origins:prevent_item_use",
+		"item_condition": {
+			"type": "origins:or",
+			"conditions": [
+			{
+				"type": "origins:ingredient",
+				"ingredient": {
+					"item": "minecraft:bow"
+				}
+			},
+			{
+				"type": "origins:ingredient",
+				"ingredient": {
+					"item": "minecraft:crossbow"
+				}		
+			}
+			]
+		}
+	},
+	"damage": {
+		"type": "origins:modify_projectile_damage",
+		"modifier": {
+			"operation": "multiply_total",
+			"value": -0.5
+		}
+	}
+}

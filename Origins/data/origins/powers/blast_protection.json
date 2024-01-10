@@ -1,0 +1,13 @@
+{
+  "name":"Blast protection",
+  "description":"You receive half damage from explosions",
+  "type": "origins:modify_damage_taken",
+  "damage_condition": {
+    "type": "toomanyorigins:explosive"
+  },
+  "modifier": {
+    "value": -0.5,
+    "operation": "multiply_total"
+  }
+  
+}

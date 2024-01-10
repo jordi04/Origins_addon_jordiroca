@@ -1,0 +1,12 @@
+{
+    "name": "Freeze",
+    "description": "If it's snowing you'll freeze.",
+    "type": "origins:freeze",
+    "condition": {
+        "type": "origins:biome",
+        "condition": {
+            "type": "origins:precipitation",
+            "precipitation": "snow"
+        }
+    }
+}

@@ -1,0 +1,21 @@
+{
+	"type": "origins:multiple",
+	"name": "Monkey Feet",
+	"description": "You move 25% slower and take full knockback regardless of armor",
+	"speed": {
+		"type": "origins:attribute",
+		"modifier": {
+			"attribute": "minecraft:generic.movement_speed",
+			"value": -0.25,
+			"operation": "multiply_base"
+		}
+	},
+	"knockback": {
+		"type": "origins:attribute",
+		"modifier": {
+			"attribute": "minecraft:generic.knockback_resistance",
+			"operation": "multiply_total",
+			"value": -1
+		}
+	}
+}

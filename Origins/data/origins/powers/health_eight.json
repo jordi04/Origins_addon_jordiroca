@@ -1,0 +1,10 @@
+{
+	"type": "origins:attribute",
+	"name": "Weak Bones",
+	"description": "You have 2 less hearts",
+	"modifier": {
+		"attribute": "minecraft:generic.max_health",
+		"value": -4,
+		"operation": "addition"
+	}
+}

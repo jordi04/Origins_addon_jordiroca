@@ -1,0 +1,30 @@
+{
+	"type": "origins:stacking_status_effect",
+	"name": "Energy filled Monuments",
+	"description": "Once a place built by your ancestors was taken by the Elder Guardians, the Monument still echoes with a warm restorative energy, perhaps if the Elder Guardians no longer lived there, the power could be restored.",
+	"min_stacks": 0,
+	"max_stacks": 10,
+	"duration_per_stack": 10,
+	"effect": {
+		"effect": "minecraft:regeneration",
+		"amplifier": 1,
+		"is_ambient": true,
+		"show_particles": true,
+		"show_icon": true
+	},
+	"condition": {
+		"type": "origins:and",
+		"conditions": [
+		{
+			"type": "origins:predicate",
+			"predicate": "pos:is_in_monument"
+		},
+		{
+			"type": "origins:command",
+			"command": "execute if entity @e[type=minecraft:elder_guardian, distance=..150]",
+			"comparison": "==",
+			"compare_to": 0
+		}
+		]
+	}
+}

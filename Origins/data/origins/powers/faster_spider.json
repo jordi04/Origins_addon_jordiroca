@@ -1,0 +1,10 @@
+{
+  "name": "Eight legs speed bonus",
+  "description": "Due to your large ammount of legs, you're 10% faster than others on foot.",
+  "type": "origins:attribute",
+  "modifier": {
+    "attribute": "minecraft:generic.movement_speed",
+    "value": 0.1,
+    "operation": "multiply_base"
+  }
+}

@@ -1,0 +1,7 @@
+{
+  "name": "Arthropod",
+  "description": "You are part of the arthropods group, meaning that you are afected by bane of arthropods.",
+  "type": "origins:entity_group",
+  "group": "arthropod",
+  "hidden": true
+}
