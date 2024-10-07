@@ -18,6 +18,6 @@ With the support of the vibrant **Origins** Discord community and its powerful A
 - **Balanced Gameplay:** Every Origin is meticulously designed to ensure balanced gameplay, making each choice meaningful and fun.
 - **Community-Driven:** This addon reflects the collective creativity of the Origins community, with ideas and insights that have shaped its development.
 
-**Feedback & Future Updates:**
+**Feedback**
 
 The initial reception among my friends has been overwhelmingly positive, I'm sure you'll enjoy it too
